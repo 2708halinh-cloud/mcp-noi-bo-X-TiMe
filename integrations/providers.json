@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "base": "clean-MCP-no-legacy-toolcall",
+  "authority": "ToolRegistry",
+  "upstreams": [
+    {
+      "name": "mcp-cmd",
+      "url": "https://github.com/developit/mcp-cmd",
+      "role": "persistent-mcp-cli",
+      "carrier": "node-optional",
+      "mode": "manual-only",
+      "installed": false,
+      "live_verified": false
+    },
+    {
+      "name": "MindGeniusAI",
+      "url": "https://github.com/xianjianlf2/MindGeniusAI",
+      "role": "document-to-editable-mindmap",
+      "carrier": "separate-app",
+      "mode": "disabled",
+      "installed": false,
+      "live_verified": false
+    },
+    {
+      "name": "ToolRegistry",
+      "url": "https://github.com/Oaklight/ToolRegistry",
+      "role": "tool-catalog-python",
+      "carrier": "optional-local",
+      "mode": "registry-only",
+      "installed": false,
+      "live_verified": false
+    },
+    {
+      "name": "OGAM",
+      "url": "https://github.com/off-grid-ai/OGAM",
+      "role": "mobile-offline-ai",
+      "carrier": "mobile-app",
+      "mode": "disabled",
+      "installed": false,
+      "live_verified": false
+    },
+    {
+      "name": "bbd2api",
+      "url": "https://github.com/N1nEmAn/bbd2api",
+      "role": "external-model-api-proxy",
+      "carrier": "external-http",
+      "mode": "disabled",
+      "installed": false,
+      "live_verified": false
+    },
+    {
+      "name": "zeroboot",
+      "url": "https://github.com/zerobootdev/zeroboot",
+      "role": "kvm-firecracker-isolated-sandbox",
+      "carrier": "linux-kvm",
+      "mode": "disabled",
+      "installed": false,
+      "live_verified": false
+    },
+    {
+      "name": "AOrchestra",
+      "url": "https://github.com/FoundationAgents/AOrchestra",
+      "role": "subagent-orchestration",
+      "carrier": "optional-local",
+      "mode": "disabled",
+      "installed": false,
+      "live_verified": false
+    },
+    {
+      "name": "deep-research",
+      "url": "https://github.com/Cranot/deep-research",
+      "role": "recursive-research",
+      "carrier": "optional-local",
+      "mode": "trigger-only",
+      "installed": false,
+      "live_verified": false
+    }
+  ],
+  "rules": {
+    "deep_research_trigger": "Truy tìm",
+    "no_implicit_process_start": true,
+    "no_external_call_without_runtime_and_authorization": true,
+    "no_session_or_token_persistence_in_repo": true,
+    "require_host_mcp_tools_list_and_test_call": true
+  }
+}
