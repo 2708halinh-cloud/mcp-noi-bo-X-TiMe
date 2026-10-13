@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "integration_date": "2026-10-14",
+  "sources": [
+    {
+      "name": "ToolGen",
+      "repository": "https://github.com/Reason-Wang/ToolGen",
+      "kind": "LLM tool-retrieval and calling research framework",
+      "mechanism": "Tool virtual tokens; training/inference with ToolBench and StableToolBench",
+      "integration": "optional tool candidate mapping into SOL allowlist",
+      "enabled": false,
+      "external_runtime_verified": false
+    },
+    {
+      "name": "CatGPT-Gateway",
+      "repository": "https://github.com/GautamVhavle/CatGPT-Gateway",
+      "kind": "browser-automation-backed OpenAI-compatible HTTP API gateway",
+      "mechanism": "chat completions and OpenAI-style tool_calls via prompt-driven JSON parsing",
+      "integration": "optional untrusted tool-call input schema; never import browser sessions",
+      "enabled": false,
+      "external_runtime_verified": false
+    }
+  ],
+  "policy": {
+    "execution": "deny-by-default",
+    "network": false,
+    "browser_session_access": false,
+    "credentials_in_git": false,
+    "scope": "normalize-only",
+    "require_tools_list_validation": true
+  }
+}
