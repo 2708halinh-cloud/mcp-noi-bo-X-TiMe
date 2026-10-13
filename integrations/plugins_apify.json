@@ -1,0 +1,37 @@
+{
+  "version": "2026-10-14",
+  "apify": {
+    "url": "https://mcp.apify.com/?tools=actors,docs,runs,storage,tasks,schedules,builds,source,api,apify/rag-web-browser,apify/web-fetch",
+    "tool_groups": [
+      "actors",
+      "docs",
+      "runs",
+      "storage",
+      "tasks",
+      "schedules",
+      "builds",
+      "source",
+      "api",
+      "apify/rag-web-browser",
+      "apify/web-fetch"
+    ],
+    "secret_environment_variable": "APIFY_API_TOKEN",
+    "token_stored_in_repo": false,
+    "live_tools_list_verified": false,
+    "write_and_billing_groups_require_individual_review": true
+  },
+  "legacy_plugins": [
+    {
+      "repo": "https://github.com/embedi/meloader",
+      "host": "IDA",
+      "installed": false
+    },
+    {
+      "repo": "https://github.com/imaginary-cloud/redmine_evm",
+      "host": "Redmine",
+      "installed": false
+    }
+  ],
+  "haystack_reference": "https://haystack.deepset.ai/cookbook/apify_haystack_rag_web_browser",
+  "status": "SOURCE_ADAPTER_ONLY"
+}
