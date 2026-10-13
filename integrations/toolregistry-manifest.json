@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "transport": "stdio",
+  "basis": "Oaklight/ToolRegistry",
+  "registration": "native FastMCP adapters until upstream dependency is installed",
+  "tools": [
+    "sol_health",
+    "sol_inventory",
+    "sol_sha256",
+    "sol_registry",
+    "sol_research_plan"
+  ],
+  "triggers": {
+    "Truy tìm": {
+      "worker": "Cranot/deep-research",
+      "mode": "plan_only",
+      "auto_start": false
+    }
+  },
+  "upstreams": [
+    {
+      "name": "ToolRegistry",
+      "repo": "Oaklight/ToolRegistry",
+      "license": "MIT",
+      "mode": "registry_reference"
+    },
+    {
+      "name": "mcp-cmd",
+      "repo": "developit/mcp-cmd",
+      "license": "MIT",
+      "mode": "optional_cli_not_installed"
+    },
+    {
+      "name": "MindGeniusAI",
+      "repo": "xianjianlf2/MindGeniusAI",
+      "license": "BSL-1.1",
+      "mode": "optional_ui_not_installed"
+    },
+    {
+      "name": "OGAM",
+      "repo": "off-grid-ai/OGAM",
+      "mode": "optional_mobile_not_installed"
+    },
+    {
+      "name": "bbd2api",
+      "repo": "N1nEmAn/bbd2api",
+      "license": "CC-BY-NC-SA-4.0",
+      "mode": "optional_proxy_not_installed"
+    },
+    {
+      "name": "zeroboot",
+      "repo": "zerobootdev/zeroboot",
+      "mode": "vm_reference_not_deployed"
+    },
+    {
+      "name": "AOrchestra",
+      "repo": "FoundationAgents/AOrchestra",
+      "mode": "orchestration_reference_not_deployed"
+    },
+    {
+      "name": "deep-research",
+      "repo": "Cranot/deep-research",
+      "mode": "request_gated_not_deployed"
+    }
+  ],
+  "external_execution": false,
+  "api_keys_in_git": false,
+  "vm_booted": false,
+  "provenance": "user-supplied repositories; public README review"
+}
