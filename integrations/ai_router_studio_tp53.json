@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "module": "AI Router Studio / TP53 biology",
+  "subject": {
+    "gene": "TP53",
+    "protein": "p53",
+    "uniprot_accession": "P04637",
+    "organism": "Homo sapiens",
+    "canonical_length_aa": 393,
+    "uniprot_entry": "P53_HUMAN"
+  },
+  "biological_function": {
+    "summary_vi": "Yếu tố phiên mã ức chế khối u, đáp ứng tổn thương DNA và stress tế bào; điều hòa ngừng chu kỳ tế bào, sửa chữa DNA và apoptosis.",
+    "provenance": "UniProt P04637 reviewed FUNCTION annotation"
+  },
+  "domains": [
+    {
+      "id": "TAD1",
+      "name": "Transactivation domain 1",
+      "start": 1,
+      "end": 40,
+      "provenance": "user_supplied_interval",
+      "verified_in_this_review": false,
+      "length": 40
+    },
+    {
+      "id": "DBD",
+      "name": "DNA-binding core domain",
+      "start": 102,
+      "end": 292,
+      "provenance": "user_supplied_interval_and_RCSB_1TUP_core_description",
+      "verified_in_this_review": true,
+      "length": 191
+    },
+    {
+      "id": "TET",
+      "name": "Tetramerization domain",
+      "start": 325,
+      "end": 356,
+      "provenance": "user_supplied_interval",
+      "verified_in_this_review": false,
+      "length": 32
+    },
+    {
+      "id": "CTD",
+      "name": "C-terminal regulatory",
+      "start": 363,
+      "end": 393,
+      "provenance": "user_supplied_interval",
+      "verified_in_this_review": false,
+      "length": 31
+    }
+  ],
+  "experimental_structures": [
+    {
+      "pdb_id": "1TUP",
+      "method": "X-RAY DIFFRACTION",
+      "resolution_angstrom": 2.2,
+      "describes": "Complex of p53 DNA-binding core with DNA, not a full-length 393-aa experimental structure",
+      "region_supported": [
+        102,
+        292
+      ]
+    }
+  ],
+  "structure_predictions": [
+    {
+      "provider": "AlphaFold Protein Structure Database",
+      "accession": "P04637",
+      "classification": "predicted model",
+      "not_equivalent_to_experiment": true
+    }
+  ],
+  "source_urls": {
+    "uniprot": "https://www.uniprot.org/uniprotkb/P04637/entry",
+    "uniprot_api": "https://rest.uniprot.org/uniprotkb/P04637.json",
+    "rcsb": "https://www.rcsb.org/structure/1TUP",
+    "alphafold": "https://alphafold.ebi.ac.uk/search/text/P04637",
+    "alphafold_api": "https://alphafold.ebi.ac.uk/api/prediction/P04637"
+  },
+  "notes": [
+    "TAD1, tetramerization and C-terminal residue ranges are user-supplied boundaries; domain definitions vary by resource and convention.",
+    "Positions not covered by these four intervals are not necessarily functionless or disordered.",
+    "The listed PDB entry is a DNA-binding domain structure, not full-length p53."
+  ],
+  "provenance_policy": {
+    "FACT": [
+      "UniProt identity, protein function, length",
+      "RCSB 1TUP experimental DNA-bound core and 2.20 Å resolution"
+    ],
+    "USER_SUPPLIED": [
+      "four interval labels and coordinate ranges"
+    ],
+    "OPEN": [
+      "Independent confirmation of the precise TAD1/TET/CTD interval convention",
+      "Current predicted-model confidence by region"
+    ],
+    "source_content_not_vendored": true
+  },
+  "status": {
+    "github_source_data": true,
+    "runtime_live": false,
+    "remote_ai_router_connected": false
+  }
+}

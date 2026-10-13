@@ -1,4 +1,4 @@
-"""SOL clean MCP core plus external plugin discovery and offline Apify RAG mapping."""
+"""SOL clean MCP core with source review, Apify normalization, and TP53 biology."""
 from mcp.server.fastmcp import FastMCP
 from sol_mcp.paths import health, inventory, sha256_file, root
 from sol_mcp.sources import sources, detect_research_trigger
@@ -6,6 +6,7 @@ from sol_mcp.multi_agent import approach_source
 from sol_mcp.instruction_audit import audit_files
 from sol_mcp.external_plugins import plugin_catalog
 from sol_mcp.apify_rag import normalize_rag_result
+from sol_mcp.ai_router_biology import tp53_profile, tp53_residue
 
 mcp = FastMCP("sol-mcp")
 
@@ -41,7 +42,7 @@ def sol_source_approach(source: str) -> dict:
 
 @mcp.tool()
 def sol_instruction_audit(relative_files: list[str], workers: int = 5) -> dict:
-    """Audit explicit local files in limited parallel read-only threads."""
+    """Audit explicit local files in limited read-only threads."""
     return audit_files(str(root()), relative_files, workers)
 
 @mcp.tool()
@@ -51,8 +52,18 @@ def sol_plugin_catalog() -> dict:
 
 @mcp.tool()
 def sol_apify_rag_normalize(dataset_json: str, max_results: int = 10) -> dict:
-    """Normalize JSON from an Apify RAG actor WITHOUT launching crawlers."""
+    """Normalize untrusted JSON from Apify without calling remote actors."""
     return normalize_rag_result(dataset_json, max_results)
+
+@mcp.tool()
+def sol_ai_router_tp53_profile(accession: str = "P04637") -> dict:
+    """Return provenance-tagged human TP53 biological/domain profile."""
+    return tp53_profile(accession)
+
+@mcp.tool()
+def sol_ai_router_tp53_residue(position: int) -> dict:
+    """Locate a TP53 residue in the supplied four-domain annotation scheme."""
+    return tp53_residue(position)
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
