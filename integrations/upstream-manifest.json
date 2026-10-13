@@ -1,0 +1,42 @@
+{
+  "schema": "sol.mcp.upstreams.v1",
+  "updated": "2026-10-14",
+  "design": "ToolRegistry-aligned provenance; native MCP only",
+  "upstreams": [
+    {
+      "name": "mcp-cmd",
+      "url": "https://github.com/developit/mcp-cmd",
+      "role": "persistent-mcp-cli-client",
+      "language": "JavaScript",
+      "mode": "optional-local-cli",
+      "note": "External CLI is Node-based; not bundled with Python server."
+    },
+    {
+      "name": "MindGeniusAI",
+      "url": "https://github.com/xianjianlf2/MindGeniusAI",
+      "role": "pdf-rag-editable-mindmap-ui",
+      "language": "TypeScript",
+      "mode": "optional-ui",
+      "note": "Separate application, not an MCP transport."
+    },
+    {
+      "name": "ToolRegistry",
+      "url": "https://github.com/Oaklight/ToolRegistry",
+      "role": "protocol-agnostic-tool-catalog",
+      "language": "Python",
+      "mode": "registry-reference",
+      "note": "Registry concept is catalog/allowlist, not unrestricted execution."
+    },
+    {
+      "name": "OGAM",
+      "url": "https://github.com/off-grid-ai/OGAM",
+      "role": "local-mobile-mac-inference",
+      "language": "native",
+      "mode": "optional-inference",
+      "note": "Model capabilities and tool calling require separately validated runtime."
+    }
+  ],
+  "default_enable": false,
+  "no_automatic_execution": true,
+  "license_and_transport_review_required": true
+}
