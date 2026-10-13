@@ -1,0 +1,48 @@
+{
+  "version": "2026-10-14.1",
+  "policy": "source-first-fail-closed",
+  "upstreams": [
+    {
+      "name": "Rubra",
+      "url": "https://github.com/rubra-ai/rubra",
+      "role": "model-tool-calling",
+      "language": "model",
+      "mode": "reference-only"
+    },
+    {
+      "name": "llm-toolcall-proxy",
+      "url": "https://github.com/ziozzang/llm-toolcall-proxy",
+      "role": "tool-call-format-converter",
+      "language": "Python",
+      "mode": "reference-only"
+    },
+    {
+      "name": "TanStack AI",
+      "url": "https://github.com/TanStack/ai",
+      "role": "typed-front-end-client",
+      "language": "TypeScript",
+      "mode": "reference-only"
+    },
+    {
+      "name": "RGB Fusion Tool",
+      "url": "https://github.com/tylerszabo/RGB-Fusion-Tool",
+      "role": "vendor-specific-hardware-driver-adapter",
+      "language": "native",
+      "mode": "disabled"
+    },
+    {
+      "name": "IBM ContextForge",
+      "url": "https://github.com/IBM/mcp-context-forge",
+      "role": "gateway-registry-proxy",
+      "language": "Python",
+      "mode": "reference-only"
+    }
+  ],
+  "routing": {
+    "default": "disabled",
+    "remote_tool_execution": false,
+    "hardware_effects": false,
+    "host_runtime_verified": false,
+    "github_source_only": true
+  }
+}
