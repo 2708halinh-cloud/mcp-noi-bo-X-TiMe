@@ -1,0 +1,9 @@
+[project]
+name = "sol-mcp-server"
+version = "0.1.0"
+description = "SOL scoped read-only MCP server"
+requires-python = ">=3.10"
+dependencies = ["mcp>=2.0.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

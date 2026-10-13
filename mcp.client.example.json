@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "sol-local": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/ABSOLUTE/PATH/TO/REPO",
+        "run",
+        "python",
+        "-m",
+        "sol_mcp.server"
+      ],
+      "env": {
+        "SOL_MCP_ROOT": "/ABSOLUTE/PATH/TO/ALLOWED/FILES"
+      }
+    }
+  }
+}
