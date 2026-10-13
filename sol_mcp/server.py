@@ -1,7 +1,8 @@
-"""SOL MCP clean core with read-only ToolRegistry/source discovery."""
+"""SOL MCP clean core with source-approach multi-agent planning."""
 from mcp.server.fastmcp import FastMCP
 from sol_mcp.paths import health, inventory, sha256_file
 from sol_mcp.sources import sources, detect_research_trigger
+from sol_mcp.multi_agent import approach_source
 
 mcp = FastMCP("sol-mcp")
 
@@ -22,13 +23,18 @@ def sol_sha256(relative_path: str) -> dict:
 
 @mcp.tool()
 def sol_registry_sources() -> dict:
-    """Read-only catalog of external integrations and their true activation status."""
+    """Read-only catalog of external integrations and true status."""
     return sources()
 
 @mcp.tool()
 def sol_research_route(command: str) -> dict:
-    """Recognize 'Truy tìm' without executing external software."""
+    """Recognize a 'Truy tìm' request, without external execution."""
     return detect_research_trigger(command)
+
+@mcp.tool()
+def sol_source_approach(source: str) -> dict:
+    """Automatically construct a five-role review plan when a source is approached."""
+    return approach_source(source)
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
