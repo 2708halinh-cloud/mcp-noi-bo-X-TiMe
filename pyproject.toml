@@ -1,0 +1,8 @@
+[project]
+name = "sol-mcp-server"
+version = "0.2.0"
+description = "SOL local-first Model Context Protocol core and provenance registries"
+requires-python = ">=3.10"
+dependencies = ["mcp>=1.0.0"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
