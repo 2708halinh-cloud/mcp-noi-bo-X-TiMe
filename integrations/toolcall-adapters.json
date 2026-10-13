@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "enabled_by_default": false,
+  "transport": "stdio",
+  "model_toolcall": {
+    "rubra": {
+      "source": "https://github.com/rubra-ai/rubra",
+      "adapter": "sol_mcp.toolcall_bridge",
+      "mode": "OpenAI function tool calls",
+      "runtime_verified": false
+    },
+    "llm_toolcall_proxy": {
+      "source": "https://github.com/ziozzang/llm-toolcall-proxy",
+      "mode": "upstream optional model-format translator",
+      "local_host_only": true,
+      "endpoint_example": "http://127.0.0.1:5000/v1/chat/completions",
+      "runtime_verified": false
+    },
+    "tanstack_ai": {
+      "source": "https://github.com/TanStack/ai",
+      "mode": "external TypeScript client using OpenAI-compatible function tool contracts; not installed into Python runtime",
+      "runtime_verified": false
+    },
+    "rgb_fusion_tool": {
+      "source": "https://github.com/tylerszabo/RGB-Fusion-Tool",
+      "mode": "Windows CLI for Gigabyte RGB Fusion; intentionally no executable dispatch without device and authorization verification",
+      "runtime_verified": false
+    },
+    "ibm_context_forge": {
+      "source": "https://github.com/IBM/mcp-context-forge",
+      "mode": "optional remote MCP gateway; requires deployment, identity, auth, HTTPS",
+      "runtime_verified": false
+    }
+  },
+  "available_functions": [
+    "sol_health",
+    "sol_inventory",
+    "sol_sha256"
+  ],
+  "reject_arbitrary_shell": true,
+  "allow_device_writes": false,
+  "allow_network_by_default": false
+}
